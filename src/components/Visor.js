@@ -3,7 +3,7 @@ import { View, TextInput, StyleSheet } from 'react-native';
 
 export default props => (
     <View>
-        <TextInput style={styles.visor} placeholder='Resultado' editable={false} />
+        <TextInput style={styles.visor} placeholder='Resultado' value={props.resultado.toString() || '0'} />
     </View>
 );
 

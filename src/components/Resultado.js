@@ -5,7 +5,7 @@ import Visor from './Visor';
 export const Resultado = props => {
     return (
         <View>
-            <Visor />
+            <Visor resultado={props.resultado} />
         </View>
     );
 }

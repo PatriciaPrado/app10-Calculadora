@@ -8,8 +8,7 @@ export const Painel = props => {
 
     const [numero1, setNumero1] = useState(0);
     const [numero2, setNumero2] = useState(0);
-
-    const [selecionado, setSelecionado] = useState(0)
+    const [selecionado, setSelecionado] = useState(0);
 
     const selectedHandle = (item) => {
         setSelecionado(item);
@@ -24,6 +23,23 @@ export const Painel = props => {
         }
     }
 
+    const calculate = () => {
+        let resultado = 0;
+        if(selecionado === 1) {
+            resultado = parseFloat(numero1) + parseFloat(numero2);
+        } else if (selecionado === 2) {
+            resultado = parseFloat(numero1) - parseFloat(numero2);
+        } else if (selecionado === 3) {
+            resultado = parseFloat(numero1) * parseFloat(numero2);  
+        } else if (selecionado === 4) {
+                resultado = parseFloat(numero1) / parseFloat(numero2);
+        } else {
+            resultado = 'error';
+        }
+
+        props.resultadoVisor(resultado);
+     }
+
     return (
     <View>
         <Entrada 
@@ -31,7 +47,7 @@ export const Painel = props => {
             num2={numero2} 
             onChangeTextHandler={onChangeTextHandler}/>
         <Operacao sinal={selecionado} onValueChangeHandler={selectedHandle} />
-        <Comando />
+        <Comando calcular={calculate}/>
     </View>
     );
 }
