@@ -32,9 +32,13 @@ export const Painel = props => {
         } else if (selecionado === 3) {
             resultado = parseFloat(numero1) * parseFloat(numero2);  
         } else if (selecionado === 4) {
+            if(numero2 === 0) {
+                resultado = 'Nenhum # é divisível por 0!';
+            } else {
                 resultado = parseFloat(numero1) / parseFloat(numero2);
+            }    
         } else {
-            resultado = 'error';
+            resultado = `Por favor, selecione uma operação...`;
         }
 
         props.resultadoVisor(resultado);

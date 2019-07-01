@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import Visor from './Visor';
 
 export const Resultado = props => {
@@ -9,3 +9,5 @@ export const Resultado = props => {
         </View>
     );
 }
+
+
